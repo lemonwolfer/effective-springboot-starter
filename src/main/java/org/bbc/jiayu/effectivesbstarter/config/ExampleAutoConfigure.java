@@ -20,7 +20,6 @@ import org.springframework.context.annotation.Configuration;
 public class ExampleAutoConfigure {
 
     private final ExampleServiceProperties properties;
-
     @Autowired
     public ExampleAutoConfigure(ExampleServiceProperties properties) {
         this.properties = properties;
