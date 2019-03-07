@@ -1,2 +1,6 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 org.bbc.jiayu.effectivesbstarter.config.ExampleAutoConfigure
+
+org.springframework.context.ApplicationListener=\
+org.bbc.jiayu.effectivesbstarter.listener.AppReadyApplicationListener,\
+org.bbc.jiayu.effectivesbstarter.listener.HungryApplicationListener  
