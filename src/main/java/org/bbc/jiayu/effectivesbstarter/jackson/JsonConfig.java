@@ -7,9 +7,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,16 +22,16 @@ import java.io.IOException;
  * description:
  **/
 @Configuration
-/*@ConditionalOnBean(ObjectMapper.class)*/
-@AutoConfigureAfter(
+/*@AutoConfigureAfter(
         name = {"org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration"}
-)
+)*/
+@ConditionalOnClass({ObjectMapper.class})
 public class JsonConfig {
     public JsonConfig(){
     }
     @Bean
-    @Primary
-    @ConditionalOnBean(ObjectMapper.class)
+    @Primary //optional
+    @ConditionalOnMissingBean(ObjectMapper.class) //optional but onbean forbidden
     public ObjectMapper jacksonObjectMapper(Jackson2ObjectMapperBuilder builder) {
         ObjectMapper objectMapper = builder.createXmlMapper(false).build();
 
