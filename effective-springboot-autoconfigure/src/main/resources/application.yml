@@ -1,0 +1,9 @@
+example.service:
+  enabled: true
+  prefix: ppp
+  suffix: sss
+
+
+
+ # mvn install:install-file -DgroupId=org.bbc.jiayu -DartifactId=effective-springboot-starter -Dversion=1.1.1
+  #-Dpackaging=jar -Dfile=out\artifacts\effective_sb_starter_jar\effective-sb-starter.jar
