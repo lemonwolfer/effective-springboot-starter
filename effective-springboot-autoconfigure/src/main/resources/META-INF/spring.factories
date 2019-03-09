@@ -1,7 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-org.bbc.jiayu.effectivespringbootautoconfigure.config.ExampleAutoConfigure,\
-org.bbc.jiayu.effectivespringbootautoconfigure.jackson.JsonConfig
-
-org.springframework.context.ApplicationListener=\
-org.bbc.jiayu.effectivespringbootautoconfigure.listener.AppReadyApplicationListener,\
-org.bbc.jiayu.effectivespringbootautoconfigure.listener.HungryApplicationListener  
